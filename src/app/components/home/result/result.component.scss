@@ -1,0 +1,39 @@
+@import "../../../../scss/variables";
+@import "../../../../scss/mixins";
+
+@media (min-width: 768px) {
+  .container {
+    height: 100%;
+    background-color: $slate-900;
+
+    border-bottom-left-radius: 60px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    .no-calculation {
+      @include flex(center, center);
+      padding: 100px 20px;
+
+      text-align: center;
+
+      * {
+        margin: 0 auto;
+      }
+
+      .icon {
+        width: 10rem;
+        img {
+          width: 10rem;
+        }
+      }
+      .information {
+        .subtitle {
+          color: $white;
+        }
+        .description {
+          color: $slate-700;
+        }
+      }
+    }
+  }
+}
