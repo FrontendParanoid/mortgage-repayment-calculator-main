@@ -1,5 +1,98 @@
+@import "../../../../scss/mixins";
+@import "../../../../scss/variables";
+
 @media (min-width: 768px) {
   .container {
     height: 100%;
+    padding: 30px 60px;
+
+    .title {
+      @include flex(space-between, center);
+      margin-bottom: 40px;
+      .heading {
+        font-size: 22px;
+        color: $slate-900;
+      }
+      .clear {
+        font-size: 14px;
+        color: $slate-700;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+    .mortgage {
+      form {
+        .form-group {
+          margin-bottom: 10px;
+
+          label {
+            display: block;
+            margin-bottom: 10px;
+            color: $slate-700;
+          }
+          .input-group {
+            position: relative;
+            input {
+              padding: 9px;
+              border-radius: 5px;
+              border: 1px solid $slate-700;
+              width: 100%;
+            }
+            .icon {
+              background-color: $slate-100;
+              padding: 8.5px;
+              text-align: center;
+              width: auto;
+              border-radius: 5px;
+
+              position: absolute;
+              top: 50%;
+              left: 1px;
+              transform: translateY(-50%);
+
+              color: $slate-700;
+            }
+          }
+        }
+
+        .flex-form-group {
+          @include grid(1, 2, 50px);
+          .input-group {
+            position: relative;
+            input {
+              padding: 9px;
+              border-radius: 5px;
+              border: 1px solid $slate-700;
+              width: 100%;
+            }
+            .icon-flex {
+              background-color: $slate-100;
+              padding: 8.5px;
+              text-align: center;
+              width: auto;
+              border-radius: 5px;
+
+              position: absolute;
+              top: 50%;
+              transform: translate(50%, -50%);
+
+              color: $slate-700;
+              right: 0px;
+              make the input group inside the input itself and not inside a div so the icon works well
+            }
+          }
+        }
+
+        //to remove the arrows
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        input[type="number"] {
+          appearance: textfield;
+        }
+      }
+    }
   }
 }
