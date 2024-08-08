@@ -32,53 +32,98 @@
           }
           .input-group {
             position: relative;
+            width: 100%;
+
             input {
               padding: 9px;
               border-radius: 5px;
               border: 1px solid $slate-700;
               width: 100%;
             }
-            .icon {
+            .icon-left-side,
+            .icon-right-side {
               background-color: $slate-100;
+              color: $slate-700;
+
               padding: 8.5px;
-              text-align: center;
-              width: auto;
+              margin-left: 1px;
               border-radius: 5px;
 
+              user-select: none;
+              text-align: center;
+              width: auto;
               position: absolute;
-              top: 50%;
-              left: 1px;
-              transform: translateY(-50%);
 
-              color: $slate-700;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+            .icon-left-side {
+              left: 0px;
+            }
+            .icon-right-side {
+              right: 0px;
             }
           }
         }
 
         .flex-form-group {
-          @include grid(1, 2, 50px);
-          .input-group {
-            position: relative;
+          @include grid(1, 2, 15px);
+          margin-top: 20px;
+
+          .form-group {
             input {
-              padding: 9px;
-              border-radius: 5px;
-              border: 1px solid $slate-700;
               width: 100%;
             }
-            .icon-flex {
-              background-color: $slate-100;
-              padding: 8.5px;
-              text-align: center;
-              width: auto;
-              border-radius: 5px;
+            span {
+              margin-right: 1px;
+            }
+          }
+        }
 
-              position: absolute;
-              top: 50%;
-              transform: translate(50%, -50%);
+        .form-group-checkbox {
+          margin-top: 10px;
 
-              color: $slate-700;
-              right: 0px;
-              make the input group inside the input itself and not inside a div so the icon works well
+          .subtitle {
+            color: $slate-700;
+            margin-bottom: 10px;
+          }
+
+          label {
+            @include flex(start, center);
+            border: 1px solid $slate-700;
+            padding: 10px;
+            border-radius: 7px;
+            margin: 10px 0px;
+            user-select: none;
+            input {
+              margin-right: 20px;
+              border: 1px solid $slate-700;
+              padding: 8px;
+              border-radius: 50%;
+
+              &:checked {
+                background-color: $slate-700;
+              }
+            }
+            span {
+              font-weight: bold;
+              color: $slate-900;
+            }
+          }
+        }
+
+        .btns {
+          margin-top: 30px;
+          button[type="submit"] {
+            @include flex(center, center);
+            background-color: $lime;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 30px;
+            color: $slate-900;
+            font-weight: 700;
+            img {
+              margin-right: 10px;
             }
           }
         }
@@ -91,6 +136,9 @@
         }
         input[type="number"] {
           appearance: textfield;
+        }
+        input[type="checkbox"] {
+          appearance: none;
         }
       }
     }

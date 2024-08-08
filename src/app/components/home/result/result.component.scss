@@ -7,13 +7,14 @@
     background-color: $slate-900;
 
     border-bottom-left-radius: 60px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 
     .no-calculation {
-      @include flex(center, center);
+      @include grid(1, 1);
+      align-items: center;
+      height: 100%;
       padding: 100px 20px;
-
       text-align: center;
 
       * {
@@ -22,6 +23,7 @@
 
       .icon {
         width: 10rem;
+        margin-bottom: 10px;
         img {
           width: 10rem;
         }
@@ -29,9 +31,11 @@
       .information {
         .subtitle {
           color: $white;
+          font-size: 22px;
         }
         .description {
-          color: $slate-700;
+          margin-top: 10px;
+          color: $slate-300;
         }
       }
     }
