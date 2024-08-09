@@ -1,5 +1,4 @@
-@import "../../../../scss/mixins";
-@import "../../../../scss/variables";
+@import "../../../../scss/global";
 
 @media (min-width: 768px) {
   .container {
@@ -17,7 +16,11 @@
         font-size: 14px;
         color: $slate-700;
         text-decoration: underline;
-        cursor: pointer;
+
+        &:hover {
+          color: $slate-900;
+          cursor: pointer;
+        }
       }
     }
     .mortgage {
@@ -33,12 +36,23 @@
           .input-group {
             position: relative;
             width: 100%;
+            border-radius: 5px;
 
             input {
-              padding: 9px;
+              padding: 9px 5px 9px 35px;
               border-radius: 5px;
               border: 1px solid $slate-700;
               width: 100%;
+              outline: none;
+
+              color: $slate-900;
+              font-weight: 700;
+              font-size: 16px;
+
+              &:hover {
+                border: 1px solid $slate-900;
+                cursor: pointer;
+              }
             }
             .icon-left-side,
             .icon-right-side {
@@ -73,7 +87,13 @@
           .form-group {
             input {
               width: 100%;
+              padding: 9px 35px 9px 5px;
             }
+
+            .mortgage-term-input {
+              padding: 9px 60px 9px 5px;
+            }
+
             span {
               margin-right: 1px;
             }
@@ -95,6 +115,11 @@
             border-radius: 7px;
             margin: 10px 0px;
             user-select: none;
+
+            &:hover {
+              border: 1px solid $lime;
+              cursor: pointer;
+            }
             input {
               margin-right: 20px;
               border: 1px solid $slate-700;
@@ -125,6 +150,12 @@
             img {
               margin-right: 10px;
             }
+
+            &:hover {
+              background: lighten($lime, 20%);
+              cursor: pointer;
+              color: $slate-900;
+            }
           }
         }
 
@@ -137,7 +168,7 @@
         input[type="number"] {
           appearance: textfield;
         }
-        input[type="checkbox"] {
+        input[type="radio"] {
           appearance: none;
         }
       }

@@ -4,26 +4,35 @@
     <p class="clear">Clear All</p>
   </div>
   <div class="mortgage">
-    <form>
+    <form [formGroup]="form">
       <div class="form-group">
         <label for="mortgageAmount">Mortgage Amount</label>
-        <div class="input-group">
-          <input type="number" name="mortgageAmount" />
+        <div class="input-group" appCustomInput>
+          <input type="number" name="mortgageAmount" formControlName="amount" />
           <span class="icon-left-side">&euro;</span>
         </div>
       </div>
       <div class="flex-form-group">
         <div class="form-group">
           <label for="mortgageTerm">Mortgage Term</label>
-          <div class="input-group">
-            <input type="number" name="mortgageTerm" />
+          <div class="input-group" appCustomInput>
+            <input
+              type="number"
+              name="mortgageTerm"
+              class="mortgage-term-input"
+              formControlName="term"
+            />
             <span class="icon-right-side">years</span>
           </div>
         </div>
         <div class="form-group">
           <label for="mortgageInterest">Mortgage Interest</label>
-          <div class="input-group">
-            <input type="number" name="mortgageInterest" />
+          <div class="input-group" appCustomInput>
+            <input
+              type="number"
+              name="mortgageInterest"
+              formControlName="interest"
+            />
             <span class="icon-right-side">%</span>
           </div>
         </div>
@@ -33,11 +42,11 @@
           <p>Mortgage Type</p>
         </div>
         <label for="repayment">
-          <input id="repayment" type="checkbox" />
+          <input id="repayment" type="radio" name="type" />
           <span>Repayment</span>
         </label>
         <label for="interestOnly">
-          <input id="interestOnly" type="checkbox" />
+          <input id="interestOnly" type="radio" name="type" />
           <span>Interest Only</span>
         </label>
       </div>
