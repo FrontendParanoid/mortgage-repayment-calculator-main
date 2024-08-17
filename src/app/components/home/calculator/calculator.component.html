@@ -1,0 +1,121 @@
+<div class="container">
+  <div class="title">
+    <h3 class="heading">Mortgage Calculator</h3>
+    <p class="clear" (click)="form.reset()">Clear All</p>
+  </div>
+  <div class="mortgage">
+    <form [formGroup]="form" (submit)="OnSubmit()">
+      <div class="form-group">
+        <label for="mortgageAmount">Mortgage Amount</label>
+        <div class="input-group" appCustomInput id="input">
+          <input
+            (input)="FormatOnInput()"
+            name="mortgageAmount"
+            formControlName="amount"
+            #numberInputs
+          />
+          <span
+            class="icon-left-side"
+            [ngClass]="{ 'error-icon': amount?.invalid && hasSubmitted }"
+            >&euro;</span
+          >
+        </div>
+        <div class="error-message">
+          <span [hidden]="!(amount?.invalid && hasSubmitted)"
+            >This field is required</span
+          >
+        </div>
+      </div>
+      <div class="flex-form-group">
+        <div class="form-group">
+          <label for="mortgageTerm">Mortgage Term</label>
+          <div class="input-group" appCustomInput id="input">
+            <input
+              type="number"
+              name="mortgageTerm"
+              class="mortgage-term-input"
+              formControlName="term"
+            />
+
+            <span
+              class="icon-right-side"
+              [ngClass]="{ 'error-icon': term?.invalid && hasSubmitted }"
+              >years</span
+            >
+          </div>
+          <div class="error-message">
+            <span [hidden]="!(term?.invalid && hasSubmitted)"
+              >This field is required</span
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="mortgageInterest">Interest Rate</label>
+          <div class="input-group" appCustomInput id="input">
+            <input
+              name="mortgageInterest"
+              formControlName="interest"
+              #numberInputs
+              (input)="FormatOnInput()"
+            />
+            <span
+              class="icon-right-side"
+              [ngClass]="{ 'error-icon': interest?.invalid && hasSubmitted }"
+              >%</span
+            >
+          </div>
+          <div class="error-message">
+            <span [hidden]="!(interest?.invalid && hasSubmitted)"
+              >This field is required</span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="form-group-checkbox" id="radio">
+        <div class="subtitle">
+          <p>Mortgage Type</p>
+        </div>
+        <label for="repayment" appCustomCheckbox id="radio-element">
+          <div class="custom-radio" id="radio">
+            <input
+              id="repayment"
+              type="radio"
+              formControlName="repaymentCB"
+              name="repaymentCB"
+              [value]="true"
+            />
+            <span class="check-mark"></span>
+          </div>
+          <span>Repayment</span>
+        </label>
+        <label for="interestOnly" appCustomCheckbox id="radio-element">
+          <div class="custom-radio" id="radio">
+            <input
+              id="interestOnly"
+              type="radio"
+              formControlName="interestCB"
+              name="interestCB"
+              [value]="true"
+            />
+            <span class="check-mark"></span>
+          </div>
+          <span>Interest Only</span>
+        </label>
+        <div class="error-message">
+          <span
+            [hidden]="
+              !(!repaymentCB?.value && !interestCB?.value && hasSubmitted)
+            "
+            >This field is required</span
+          >
+        </div>
+      </div>
+      <div class="btns">
+        <button class="submit" type="submit">
+          <img src="/images/icon-calculator.svg" />
+          Calculate Repayments
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

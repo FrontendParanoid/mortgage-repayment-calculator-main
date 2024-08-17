@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="no-calculation" *ngIf="isEmpty">
+    <div class="wrapper">
+      <div class="icon">
+        <img src="/images/illustration-empty.svg" />
+      </div>
+      <div class="information">
+        <h4 class="subtitle">Results shown here</h4>
+        <p class="description">
+          Complete the form and click "calculate repayments" to see what your
+          monthly repayments would be.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="calculation" *ngIf="!isEmpty">
+    <h1 class="title">Your results</h1>
+    <p class="mini-description">
+      Your results are shown below based on the information you provided. To
+      adjust the results. edit the form and click "calculate repayments" again.
+    </p>
+    <div class="result">
+      <div class="main-section">
+        <p class="monthly-repayment-text">
+          {{
+            data?.type === "repayment"
+              ? "Your monthly repayments"
+              : "The total interest you will pay"
+          }}
+        </p>
+        <h1 class="result-value">£{{ data?.main! | coma }}</h1>
+        <hr class="divider" />
+      </div>
+      <div class="secondary-section">
+        <p class="total-text">Total you'll repay over the term</p>
+        <h3 class="total">£{{ data?.total! | coma }}</h3>
+      </div>
+    </div>
+  </div>
+</div>

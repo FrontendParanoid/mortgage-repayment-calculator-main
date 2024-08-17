@@ -1,0 +1,30 @@
+@import "../../../scss/global";
+
+@media (min-width: 768px) {
+  .container {
+    @include flex(center, center);
+    height: 100vh;
+    background-color: $slate-100;
+
+    .wrapper {
+      @include grid(1, 2);
+      width: 768px;
+      border-radius: 10px;
+      background-color: $white;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    @include flex(center, center);
+    height: 100vh;
+    background-color: $slate-100;
+
+    .wrapper {
+      @include grid(1, 2);
+      width: 1024px;
+      border-radius: 10px;
+    }
+  }
+}

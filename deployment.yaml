@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mortgage-repayment-app
+  labels:
+    app: mortgage-repayment-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mortgage-repayment-app
+  template:
+    metadata:
+      labels:
+        app: mortgage-repayment-app
+    spec:
+      containers:
+        - name: mortgage-repayment-app
+          # in this case add your username
+          image: paranoid123/mortgage-repayment:latest
+          ports:
+            - containerPort: 8080

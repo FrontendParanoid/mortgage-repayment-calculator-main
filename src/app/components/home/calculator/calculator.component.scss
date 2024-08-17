@@ -1,0 +1,239 @@
+@import "../../../../scss/global";
+
+@media (min-width: 768px) {
+  .container {
+    height: 500px;
+    padding: 30px 60px;
+    height: 540px;
+
+    .title {
+      @include flex(space-between, center);
+      margin-bottom: 40px;
+      .heading {
+        font-size: 22px;
+        color: $slate-900;
+      }
+      .clear {
+        font-size: 14px;
+        color: $slate-700;
+        text-decoration: underline;
+
+        &:hover {
+          color: $slate-900;
+          cursor: pointer;
+        }
+      }
+    }
+    .mortgage {
+      form {
+        .form-group {
+          label {
+            display: block;
+            margin-bottom: 10px;
+            color: $slate-700;
+            font-weight: 500;
+          }
+          .input-group {
+            position: relative;
+            width: 100%;
+            border-radius: 5px;
+
+            input {
+              padding: 9px 10px 9px 35px;
+              border-radius: 5px;
+              border: 1px solid $slate-700;
+              width: 100%;
+              outline: none;
+
+              color: $slate-900;
+              font-weight: 700;
+              font-size: 16px;
+
+              &:hover {
+                border: 1px solid $slate-900;
+
+                + span {
+                  border-bottom: 1px solid $slate-900;
+                }
+              }
+            }
+            .icon-left-side {
+              background-color: $slate-100;
+              color: $slate-700;
+
+              padding: 9px;
+              border-top-left-radius: 5px;
+              border-bottom-left-radius: 5px;
+
+              border-bottom: 1px solid $slate-700;
+
+              user-select: none;
+              text-align: center;
+              width: auto;
+              position: absolute;
+
+              top: 50%;
+              transform: translateY(-48%);
+              left: 1px;
+            }
+            .icon-right-side {
+              background-color: $slate-100;
+              color: $slate-700;
+
+              padding: 9px;
+              border-top-right-radius: 5px;
+              border-bottom-right-radius: 5px;
+              border-bottom: 1px solid $slate-700;
+
+              user-select: none;
+              text-align: center;
+              width: auto;
+              position: absolute;
+
+              top: 50%;
+              transform: translateY(-48%);
+              right: 0px;
+            }
+          }
+        }
+
+        .flex-form-group {
+          @include grid(1, 2, 15px);
+
+          .form-group {
+            input {
+              width: 100%;
+              padding: 9px 35px 9px 10px;
+            }
+
+            .mortgage-term-input {
+              padding: 9px 60px 9px 10px;
+            }
+
+            span {
+              margin-right: 1px;
+            }
+          }
+        }
+
+        .form-group-checkbox {
+          .subtitle {
+            color: $slate-700;
+            margin-bottom: 10px;
+          }
+
+          label {
+            @include flex(start, center);
+
+            position: relative;
+
+            border: 1px solid $slate-700;
+            padding: 10px;
+            border-radius: 7px;
+            margin: 10px 0px 0px 0px;
+            user-select: none;
+
+            &:hover {
+              border: 1px solid $lime;
+            }
+
+            .custom-radio {
+              @include flex(start, center);
+              cursor: pointer;
+              user-select: none;
+
+              input {
+                position: absolute;
+                left: 0px;
+                display: none;
+
+                border: 1px solid $lime;
+                padding: 8px;
+                border-radius: 50%;
+
+                &:checked + .check-mark::after {
+                  content: "";
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  width: 8px;
+                  height: 8px;
+                  background-color: $lime;
+                  border-radius: 50%;
+                  transform: translate(-50%, -50%);
+                }
+
+                &:checked + .check-mark {
+                  border: 1px solid $lime;
+                }
+              }
+
+              .check-mark {
+                height: 16px;
+                width: 16px;
+                border: 1px solid $slate-700;
+                border-radius: 50%;
+                margin-right: 8px;
+                display: inline-block;
+                position: relative;
+              }
+            }
+
+            span {
+              font-weight: bold;
+              color: $slate-900;
+            }
+          }
+        }
+
+        .btns {
+          margin-top: 10px;
+          button[type="submit"] {
+            @include flex(center, center);
+            background-color: $lime;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 30px;
+            color: $slate-900;
+            font-weight: 700;
+            img {
+              margin-right: 10px;
+            }
+
+            &:hover {
+              background: lighten($lime, 20%);
+              cursor: pointer;
+              color: $slate-900;
+            }
+          }
+        }
+
+        //to remove the arrows
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        input[type="number"] {
+          appearance: textfield;
+        }
+        input[type="radio"] {
+          appearance: none;
+        }
+      }
+    }
+  }
+
+  .error-message {
+    height: 22px;
+    span {
+      font-size: 11px !important;
+      color: $red;
+    }
+  }
+  .error-icon {
+    background-color: $red !important;
+    color: $white !important;
+    border: 1px solid $red !important;
+  }
+}

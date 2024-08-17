@@ -1,0 +1,90 @@
+@import "../../../../scss/global";
+
+@media (min-width: 768px) {
+  .container {
+    height: 100%;
+    background-color: $slate-900;
+
+    border-bottom-left-radius: 60px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    .no-calculation {
+      @include grid(1, 1);
+      align-items: center;
+      height: 100%;
+      padding: 100px 20px;
+      text-align: center;
+
+      * {
+        margin: 0 auto;
+      }
+
+      .icon {
+        width: 10rem;
+        margin-bottom: 10px;
+        img {
+          width: 10rem;
+        }
+      }
+      .information {
+        .subtitle {
+          color: $white;
+          font-size: 22px;
+        }
+        .description {
+          margin-top: 10px;
+          color: $slate-300;
+        }
+      }
+    }
+    .calculation {
+      padding: 30px 30px 100px 30px;
+      height: 100%;
+      .title {
+        color: $white;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .mini-description {
+        color: $slate-300;
+        margin: 15px 0px 30px 0px;
+      }
+
+      .result {
+        padding: 20px 30px;
+        background-color: $slate-950;
+        border-radius: 5px;
+        border-top: 5px solid $lime;
+
+        .main-section {
+          margin: 10px 0px;
+
+          .monthly-repayment-text {
+            color: $slate-300;
+          }
+          .result-value {
+            margin: 10px 0px 20px 0px;
+            color: $lime;
+            font-size: 48px;
+          }
+          .divider {
+            color: $slate-700;
+            margin: 30px 0px;
+          }
+        }
+        .secondary-section {
+          .total-text {
+            color: $slate-300;
+            font-weight: 500;
+          }
+          .total {
+            margin: 10px 0px;
+            color: $white;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
